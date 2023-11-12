@@ -3,40 +3,45 @@ import java.util.Arrays;
 // Java program for implementation of QuickSort
 public class QuickSort
 {
-    /* This function takes last element as pivot,
-    places the pivot element at its correct
-    position in sorted array, and places all
-    smaller (smaller than pivot) to left of
-    pivot and all greater elements to right
-    of pivot */
+    
     public int partition(int lista[], int inicio, int fim)
     {
         int pivot = lista[fim];
         int i = (inicio -1); // index of smaller element
+        int troca =-0;
         for (int j = inicio; j<fim; j++)
+
         {
             // If current element is smaller than or
             // equal to pivot
             if (lista[j] <= pivot)
             {
                 i++;
-
+                
                 // swap arr[i] and arr[j]
                 int temp = lista[i];
+                int temp2 = lista[j];
+                System.out.println( "Troca de posição:" + temp + " da posição "+i+" com o "+temp2+" da posição "+j+".Pivo:"+pivot);
+                System.out.println("Lista antes da troca:"+Arrays.toString(lista));
                 lista[i] = lista[j];
                 lista[j] = temp;
-                System.out.println("Particionamento:"+Arrays.toString(lista));
-                
-                System.out.println("Pivot:"+pivot );
+                troca++;
+                System.out.println("Lista ápos a troca:"+Arrays.toString(lista));               
+                System.out.println("---------------------------------------------------------------------------------------------------------");
+
             }
         }
 
         // swap arr[i+1] and arr[high] (or pivot)
         int temp = lista[i+1];
+        System.out.println("Troca de posição:" + temp + " da posição "+(i+1)+" com o "+pivot+" da posição "+fim+".Pivo:"+pivot); 
+        System.out.println("Lista antes da troca:"+Arrays.toString(lista));
         lista[i+1] = lista[fim];
         lista[fim] = temp;
-        System.out.println("Particionamento:"+Arrays.toString(lista));
-        System.out.println("Pivot:"+pivot );
+        System.out.println("Lista ápos a troca:"+Arrays.toString(lista));
+        System.out.println("---------------------------------------------------------------------------------------------------------");
+        
+        
 
         return i+1;
     }
@@ -46,18 +51,19 @@ public class QuickSort
     arr[] --> Array to be sorted,
     low --> Starting index,
     high --> Ending index */
-    void sort(int arr[], int low, int high)
+   public void Sort(int lista[], int inicio, int fim)
     {
-        if (low < high)
+        if (inicio< fim)
+        
         {
 			/* pi is partitioning index, arr[pi] is
 			now at right place */
-            int pi = partition(arr, low, high);
+            int pi = partition(lista,inicio, fim);
 
             // Recursively sort elements before
             // partition and after partition
-            sort(arr, low, pi-1);
-            sort(arr, pi+1, high);
+            sort(lista, inicio, pi-1);
+            sort(lista, pi+1, fim);
         }
     }
 

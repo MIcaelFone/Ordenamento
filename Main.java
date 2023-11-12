@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+<<<<<<< HEAD
 
         int lista[] = {49, 15, 40, 27, 20, 19, 50, 2, 12, 28, 49, 44, 9, 59, 18, 5, 30, 6, 7, 28};
 
@@ -11,6 +12,14 @@ public class Main {
         System.out.println("2-InsectationSort:");
         System.out.println("3-QuickSort:");
         System.out.println("Escolha uma opção: ");
+=======
+      
+        int lista[]={49, 15, 40, 27, 20, 19, 50, 2, 12, 28, 49, 44, 9, 59, 18, 5, 30, 6, 7, 28};
+        System.out.println("1-BubbleSort:");
+        System.out.println("2-InsectationSort:");
+        System.out.println("3-QuickSort:");
+        System.out.println("Escolha uma opção:");
+>>>>>>> 5ebfb3e5634475f5ff914d4e8b27f3c4949a90b3
         Scanner sc = new Scanner(System.in);
         int opcao = sc.nextInt();
 
@@ -25,7 +34,11 @@ public class Main {
                 break;
             case 3:
                 QuickSort quickSort = new QuickSort();
+<<<<<<< HEAD
                 quickSort.sort(lista, 0, lista.length - 1);
+=======
+                quickSort.Ordenamento(lista, 0, lista.length-1);
+>>>>>>> 5ebfb3e5634475f5ff914d4e8b27f3c4949a90b3
                 break;
             default:
                 System.out.println("Opção inválida");

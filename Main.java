@@ -6,12 +6,11 @@ public class Main {
     
     public static void main(String[] args) {
       
-        //int lista[]={49, 15, 40, 27, 20, 19, 50, 2, 12, 28, 49, 44, 9, 59, 18, 5, 30, 6, 7, 28};
-        int lista[]={10,2,1,9,3};
+        int lista[]={49, 15, 40, 27, 20, 19, 50, 2, 12, 28, 49, 44, 9, 59, 18, 5, 30, 6, 7, 28};
         System.out.println("1-BubbleSort:");
         System.out.println("2-InsectationSort:");
         System.out.println("3-QuickSort:");
-        System.out.println("4-Escolha uma opção:");
+        System.out.println("Escolha uma opção:");
         Scanner sc = new Scanner(System.in);
         int opcao = sc.nextInt();
         switch (opcao){

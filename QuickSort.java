@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class QuickSort
 {
     
-    public int partition(int lista[], int inicio, int fim)
+    public int Partition(int lista[], int inicio, int fim)
     {
         int pivot = lista[fim];
         int i = (inicio -1); // index of smaller element
@@ -58,12 +58,12 @@ public class QuickSort
         {
 			/* pi is partitioning index, arr[pi] is
 			now at right place */
-            int pi = partition(lista,inicio, fim);
+            int pi = Partition(lista,inicio, fim);
 
             // Recursively sort elements before
             // partition and after partition
-            sort(lista, inicio, pi-1);
-            sort(lista, pi+1, fim);
+            Sort(lista, inicio, pi-1);
+            Sort(lista, pi+1, fim);
         }
     }
 

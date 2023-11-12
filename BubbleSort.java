@@ -17,12 +17,10 @@ public class BubbleSort {
                     lista[j + 1] = elementoAtual;
                     troca = true;
 
-                    if (lista[j] != lista[j + 1]) { // Adiciona condição para evitar impressão quando os elementos são iguais
-                        System.out.println("Troca de posição: " + elementoAtual + " com " + lista[j + 1]);
-                        System.out.println("Lista antes da troca: " + Arrays.toString(lista));
-                        System.out.println("Lista após a troca: " + Arrays.toString(lista));
-                        System.out.println("---------------------------------------------------------------------------------------------------------");
-                    }
+                    System.out.println("Troca de posição: " + elementoAtual + " com " + lista[j + 1]);
+                    System.out.println("Lista antes da troca: " + Arrays.toString(lista));
+                    System.out.println("Lista após a troca: " + Arrays.toString(lista));
+                    System.out.println("---------------------------------------------------------------------------------------------------------");
                 }
             }
 

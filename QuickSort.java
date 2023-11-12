@@ -1,76 +1,49 @@
 import java.util.Arrays;
 
-// Java program for implementation of QuickSort
-public class QuickSort
-{
-    
-    public int Partition(int lista[], int inicio, int fim)
-    {
-        int pivot = lista[fim];
-        int i = (inicio -1); // index of smaller element
-        int troca =-0;
-        for (int j = inicio; j<fim; j++)
+public class QuickSort {
 
-        {
-            // If current element is smaller than or
-            // equal to pivot
-            if (lista[j] <= pivot)
-            {
+    public int partition(int lista[], int inicio, int fim) {
+        int pivot = lista[fim];
+        int i = (inicio - 1);
+
+        for (int j = inicio; j < fim; j++) {
+            if (lista[j] <= pivot) {
                 i++;
-                
-                // swap arr[i] and arr[j]
+                // Troca lista[i] e lista[j]
                 int temp = lista[i];
-                int temp2 = lista[j];
-                System.out.println( "Troca de posição:" + temp + " da posição "+i+" com o "+temp2+" da posição "+j+".Pivo:"+pivot);
-                System.out.println("Lista antes da troca:"+Arrays.toString(lista));
                 lista[i] = lista[j];
                 lista[j] = temp;
-                troca++;
-                System.out.println("Lista ápos a troca:"+Arrays.toString(lista));               
-                System.out.println("---------------------------------------------------------------------------------------------------------");
 
+                System.out.println("Troca de posição: " + temp + " da posição " + i +
+                        " com o " + lista[j] + " da posição " + j + ". Pivo: " + pivot);
+                System.out.println("Lista antes da troca: " + Arrays.toString(lista));
+                System.out.println("Lista após a troca: " + Arrays.toString(lista));
+                System.out.println("---------------------------------------------------------------------------------------------------------");
             }
         }
 
-        // swap arr[i+1] and arr[high] (or pivot)
-        int temp = lista[i+1];
-        System.out.println("Troca de posição:" + temp + " da posição "+(i+1)+" com o "+pivot+" da posição "+fim+".Pivo:"+pivot); 
-        System.out.println("Lista antes da troca:"+Arrays.toString(lista));
-        lista[i+1] = lista[fim];
+        // Troca lista[i+1] e lista[high] (ou pivot)
+        int temp = lista[i + 1];
+        lista[i + 1] = lista[fim];
         lista[fim] = temp;
-        System.out.println("Lista ápos a troca:"+Arrays.toString(lista));
-        System.out.println("---------------------------------------------------------------------------------------------------------");
-        
-        
 
-        return i+1;
+        System.out.println("Troca de posição: " + temp + " da posição " + (i + 1) +
+                " com o " + pivot + " da posição " + fim + ". Pivo: " + pivot);
+        System.out.println("Lista antes da troca: " + Arrays.toString(lista));
+        System.out.println("Lista após a troca: " + Arrays.toString(lista));
+        System.out.println("---------------------------------------------------------------------------------------------------------");
+
+        return i + 1;
     }
 
+    public void sort(int lista[], int inicio, int fim) {
+        if (inicio < fim) {
+            int pi = partition(lista, inicio, fim);
 
-    /* The main function that implements QuickSort()
-    arr[] --> Array to be sorted,
-    low --> Starting index,
-    high --> Ending index */
-   public void Sort(int lista[], int inicio, int fim)
-    {
-        if (inicio< fim)
-        
-        {
-			/* pi is partitioning index, arr[pi] is
-			now at right place */
-            int pi = Partition(lista,inicio, fim);
-
-            // Recursively sort elements before
-            // partition and after partition
-            Sort(lista, inicio, pi-1);
-            Sort(lista, pi+1, fim);
+            // Recursivamente ordena elementos antes
+            // da partição e depois da partição
+            sort(lista, inicio, pi - 1);
+            sort(lista, pi + 1, fim);
         }
     }
-
-    /* A utility function to print array of size n */
-
-
-    // Driver program
-
 }
-/*This code is contributed by Rajat Mishra */

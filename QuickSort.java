@@ -1,9 +1,8 @@
 import java.util.Arrays;
 
-// Java program for implementation of QuickOrdenamento
 public class QuickSort{
     
-    public int Particionamento(int lista[], int inicio, int fim)
+    private int Particionamento(int lista[], int inicio, int fim)
     {
         int pivo = lista[fim];//pivo
         int i = (inicio -1);// index do menor elemento a ser trocado
@@ -44,28 +43,20 @@ public class QuickSort{
     }
 
 
-    /* The main function that implements QuickOrdenamento()
-    arr[] --> Array to be Ordenamentoed,
-    low --> Starting index,
-    high --> Ending index */
+   
    public void Ordenamento(int lista[], int inicio, int fim)
     {
         if (inicio< fim) 
         
         {
 			 
-            int pi = Particionamento(lista,inicio, fim);
+            int indiciePivo = Particionamento(lista,inicio, fim); 
 
             
-            Ordenamento(lista, inicio, pi-1);
-            Ordenamento(lista, pi+1, fim);
+            Ordenamento(lista, inicio, indiciePivo-1); 
+            Ordenamento(lista, indiciePivo+1, fim);
         }
     }
 
-    /* A utility function to print array of size n */
-
-
-    // Driver program
-
+  
 }
-/*This code is contributed by Rajat Mishra */

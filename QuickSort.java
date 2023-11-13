@@ -11,22 +11,23 @@ public class QuickSort {
             if (lista[j] <= pivo) {
                 i++; // incrementa o index do menor elemento a ser trocado
  
-                int temp = lista[i];
-                int temp2 = lista[j];
-                System.out.println( "Troca de posição:" + temp + " da posição "+i+" com o "+temp2+" da posição "+j+".Pivo:"+pivo);
+                int elementoTemporario  =lista[i];
+                int elementoTemporario2 =lista[j];
+               
+                System.out.println( "Troca de posição:" + elementoTemporario+ " da posição "+i+" com o "+elementoTemporario2+" da posição "+j+".Pivo:"+pivo);
                 System.out.println("Lista antes da troca:"+Arrays.toString(lista));
                 lista[i] = lista[j];
-                lista[j] = temp; // troca o item do menor elemento a ser trocado com o item do elemento atual
+                lista[j] = elementoTemporario; 
       
                 System.out.println("Lista após a troca:"+Arrays.toString(lista));               
                 System.out.println("---------------------------------------------------------------------------------------------------------");
             }
         }
-        int temp = lista[i+1]; // guarda o item do menor elemento a ser trocado
-        System.out.println("Troca de posição:" + temp + " da posição "+(i+1)+" com o "+pivo+" da posição "+fim+".Pivo:"+pivo); 
+        int elementoTemporario = lista[i+1]; // guarda o item do menor elemento a ser trocado
+        System.out.println("Troca de posição:" + elementoTemporario + " da posição "+(i+1)+" com o "+pivo+" da posição "+fim+".Pivo:"+pivo); 
         System.out.println("Lista antes da troca:"+Arrays.toString(lista));
         lista[i+1] = lista[fim]; // troca o item do menor elemento a ser trocado com o item do pivo
-        lista[fim] = temp; // troca o item do menor elemento a ser trocado com o item do pivo
+        lista[fim] = elementoTemporario; // troca o item do menor elemento a ser trocado com o item do pivo
         System.out.println("Lista após a troca:"+Arrays.toString(lista));
         System.out.println("---------------------------------------------------------------------------------------------------------"); 
        

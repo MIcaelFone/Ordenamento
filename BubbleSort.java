@@ -18,7 +18,6 @@ public class BubbleSort {
                     troca = true;
 
                     System.out.println("Troca de posição: " + elementoAtual + " com " + lista[j + 1]);
-                    System.out.println("Lista antes da troca: " + Arrays.toString(lista));
                     System.out.println("Lista após a troca: " + Arrays.toString(lista));
                     System.out.println("---------------------------------------------------------------------------------------------------------");
                 }

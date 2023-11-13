@@ -13,12 +13,14 @@ public class BubbleSort {
                 if (lista[j] > lista[j + 1]) {
                     // Troca os elementos se estiverem na ordem errada
                     int elementoAtual = lista[j];
+                    int elementoSeguinte = lista[j + 1];
+                    System.out.println( "Troca de posição:" + elementoAtual + " da posição "+j+" com o "+elementoSeguinte+" da posição "+(j+1)+".");
+                    System.out.println("Lista antes da troca: " + Arrays.toString(lista));
+                  
                     lista[j] = lista[j + 1];
+                    
                     lista[j + 1] = elementoAtual;
                     troca = true;
-
-                    System.out.println("Troca de posição: " + elementoAtual + " com " + lista[j + 1]);
-                    System.out.println("Lista antes da troca: " + Arrays.toString(lista));
                     System.out.println("Lista após a troca: " + Arrays.toString(lista));
                     System.out.println("---------------------------------------------------------------------------------------------------------");
                 }

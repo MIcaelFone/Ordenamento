@@ -1,26 +1,27 @@
 import java.util.Arrays;
 
+
 public class InsertionSort {
 
-    public void ordenarInsertionSort(int[] lista) {
-        for (int i = 1; i < lista.length; i++) {
-            int j = i;
-            int elementoTemporario = lista[j];
-
-            while (j > 0 && elementoTemporario < lista[j - 1]) {
-                // Troca os elementos se estiverem na ordem errada
-                lista[j] = lista[j - 1];
-                lista[j - 1] = elementoTemporario;
-
-                // Impressão após a troca
-                System.out.println("Troca de posição: " + elementoTemporario +
-                        " da posição " + j + " com o " + lista[j - 1] +
-                        " da posição " + (j - 1) + ".");
-                System.out.println("Lista após a troca: " + Arrays.toString(lista));
+    public void ordenarInsertionSort(int [] lista){
+        
+        for (int i =1; i < lista.length; i++){
+            
+            int j = i; // posição do elemento a ser inserido
+            while(j > 0 && lista[j]< lista[j-1]){ // enquanto o elemento a ser inserido for menor que o elemento anterior e  
+                int elementoTemporario = lista[j];
+                int elementoAnterior = lista[j-1];
+                System.out.println( "Troca de posição:" +elementoTemporario + " da posição "+j+" com o "+elementoAnterior+" da posição "+(j-1)+".");
+                System.out.println("Lista antes da troca:"+Arrays.toString(lista));
+                lista[j] = lista[j-1];
+                lista[j-1] =elementoTemporario;
+                System.out.println("Lista após a troca:"+Arrays.toString(lista));
                 System.out.println("---------------------------------------------------------------------------------------------------------");
 
-                j--;
+                j--; // decrementa a posição do elemento a ser inserido
+
             }
+
         }
     }
 }
